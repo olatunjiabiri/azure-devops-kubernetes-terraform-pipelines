@@ -58,8 +58,8 @@ stages:
     - task: KubernetesManifest@0
       inputs:
         action: 'deploy'
+        kubernetesServiceConnection: aws-kubernetes-cluster-service-connection
         namespace: 'default'
-        kubernetesServiceConnection: Azure-kubernetes-connection
         manifests: '$(System.ArtifactsDirectory)/configuration/kubernetes/deployment.yaml'
         containers: 'olatunji12/currency-exchange-devops:$(tag)'
 
